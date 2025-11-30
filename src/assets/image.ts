@@ -2,6 +2,7 @@ import isaras_bm from "./isaras-bm.svg";
 import logo_isaras from "./logo-isaras.png";
 import gradient_37 from "./images/gradient-37.png";
 import gradient_44 from "./images/gradient-44.png";
+import gradient_23 from "./images/gradient-23.png";
 import gradient_3 from "./images/gradient-3.png";
 import ask_saras from "./images/ask-saras.png";
 import ic_1 from "./images/ic-1.png";
@@ -15,7 +16,12 @@ import ic_8 from "./images/ic-8.png";
 import ic_9 from "./images/ic-9.png";
 import ic_10 from "./images/ic-10.png";
 import PYQS from "./images/PYQS.png";
+import smarter_than_chatgpt from "./images/smarter-than-chatgpt.png";
+import smarter_than_search from "./images/smarter-than-search.png";
 import current_affairs from "./images/current-affairs.png";
+import stress_less from "./images/stress-less.png";
+import study_efficient from "./images/study-efficient.png";
+import perform_better from "./images/perform-better.png";
 import dashboard_ai_isaras from "./images/dashboard-ai-isaras.png";
 import tube_4 from "./videos/tube-4.mp4";
 
@@ -40,4 +46,10 @@ export {
   ic_10,
   PYQS,
   current_affairs,
+  gradient_23,
+  smarter_than_chatgpt,
+  smarter_than_search,
+  stress_less,
+  study_efficient,
+  perform_better,
 };
