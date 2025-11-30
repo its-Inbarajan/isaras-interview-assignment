@@ -22,7 +22,8 @@ export default function Navbar() {
 
   return (
     <header>
-      <div className="fixed inset-x-0 top-6 z-20 mx-auto w-full max-w-screen-3xl  bg-gray-50 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 py-3 shadow rounded-full lg:max-w-6xl">
+      {/* <div className="fixed inset-x-0 top-6 z-20 mx-auto w-full max-w-screen-3xl  bg-white bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 py-3  rounded-full lg:max-w-6xl"> */}
+      <div className="fixed inset-x-0 top-6 z-20 mx-auto w-full max-w-screen-3xl py-3 rounded-full lg:max-w-6xl  bg-white/60 bg-clip-padding backdrop-filter  backdrop-blur-xl bg-opacity-0 backdrop-saturate-100 backdrop-contrast-75">
         <div className="lg:px-4 px-2">
           <div className="flex items-center justify-between">
             <div className="flex shrink-0">
@@ -36,11 +37,7 @@ export default function Navbar() {
                   />
                 </figure>
                 <figure className="max-w-11 lg:hidden block">
-                  <img
-                    src={mlogo}
-                    alt="logo"
-                    className="w-full md:hidden block"
-                  />
+                  <img src={mlogo} alt="logo" className="w-full block" />
                 </figure>
               </a>
             </div>
@@ -57,7 +54,7 @@ export default function Navbar() {
                   <li className="py-2.5">
                     <a
                       key={`nav-${item}`}
-                      className="flex items-center gap-1 px-5 py-2 border border-transparent text-white dark:text-black hover:border-gray-500 rounded-full text-sm font-medium hover:text-purple-500 transition-all duration-400 ease-in-out capitalize"
+                      className="flex items-center gap-1 px-5 py-2 border border-transparent text-black hover:border-gray-500 rounded-full text-sm font-medium hover:text-purple-500 transition-all duration-400 ease-in-out capitalize"
                       href={`#${item}`}
                     >
                       {item}
@@ -136,7 +133,7 @@ export default function Navbar() {
                     <a
                       href={`#${item}`}
                       onClick={handleClose}
-                      className="text-tagline-1 font-normal transition-all duration-200 py-3 border-b border-black dark:border-white w-full text-left flex items-center justify-between cursor-pointer uppercase"
+                      className="text-tagline-1 font-normal transition-all duration-200 py-3 border-b text-black border-black dark:border-white w-full text-left flex items-center justify-between cursor-pointer uppercase"
                     >
                       <span>{item}</span>
                     </a>
