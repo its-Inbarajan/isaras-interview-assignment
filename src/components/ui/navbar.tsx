@@ -55,7 +55,7 @@ export default function Navbar() {
                     <a
                       key={`nav-${item}`}
                       className="flex items-center gap-1 px-5 py-2 border border-transparent text-black hover:border-gray-500 rounded-full text-sm font-medium hover:text-purple-500 transition-all duration-400 ease-in-out capitalize"
-                      href={`#${item}`}
+                      href={`#${item.toLowerCase().split(" ").join("")}`}
                     >
                       {item}
                     </a>
