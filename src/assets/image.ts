@@ -3,7 +3,11 @@ import logo_isaras from "./logo-isaras.png";
 import gradient_37 from "./images/gradient-37.png";
 import gradient_44 from "./images/gradient-44.png";
 import gradient_23 from "./images/gradient-23.png";
+import gradient_32 from "./images/gradient-32.png";
+import gradient_33 from "./images/gradient-33.png";
+import gradient_34 from "./images/gradient-34.png";
 import gradient_3 from "./images/gradient-3.png";
+import gradient_9 from "./images/gradient-9.png";
 import ask_saras from "./images/ask-saras.png";
 import ic_1 from "./images/ic-1.png";
 import ic_2 from "./images/ic-2.png";
@@ -15,6 +19,10 @@ import ic_7 from "./images/ic-7.png";
 import ic_8 from "./images/ic-8.png";
 import ic_9 from "./images/ic-9.png";
 import ic_10 from "./images/ic-10.png";
+import step_1 from "./images/step-1.png";
+import step_2 from "./images/step-2.png";
+import step_3 from "./images/step-3.png";
+import step_4 from "./images/step-4.png";
 import PYQS from "./images/PYQS.png";
 import smarter_than_chatgpt from "./images/smarter-than-chatgpt.png";
 import smarter_than_search from "./images/smarter-than-search.png";
@@ -52,4 +60,12 @@ export {
   stress_less,
   study_efficient,
   perform_better,
+  gradient_32,
+  gradient_33,
+  gradient_34,
+  gradient_9,
+  step_1,
+  step_2,
+  step_3,
+  step_4,
 };

@@ -3,6 +3,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
 :root,
 :host {
   --font-inter-tight: "Roboto", sans-serif;
@@ -139,12 +144,16 @@
 
 .dark\:hero-bg-overlay-dark:where(.dark, .dark *) {
   --tw-gradient-position: 180deg, #070b10e6 0%, #070b10 100%;
-  background-image: linear-gradient(var(--tw-gradient-stops, 180deg, #070b10e6 0%, #070b10 100%));
+  background-image: linear-gradient(
+    var(--tw-gradient-stops, 180deg, #070b10e6 0%, #070b10 100%)
+  );
 }
 
 .hero-bg-overlay-light {
   --tw-gradient-position: 180deg, #fffc 43.93%, #fff 100%;
-  background-image: linear-gradient(var(--tw-gradient-stops, 180deg, #fffc 43.93%, #fff 100%));
+  background-image: linear-gradient(
+    var(--tw-gradient-stops, 180deg, #fffc 43.93%, #fff 100%)
+  );
 }
 
 .bg-image {
@@ -163,8 +172,16 @@
   color: var(--color-secondary);
   text-transform: uppercase;
   --tw-backdrop-blur: blur(var(--blur-ns-badge-blur));
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+    var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+    var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+    var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+    var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+    var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+    var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+    var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+    var(--tw-backdrop-sepia);
   border-radius: 3.40282e38px;
   display: inline-block;
 }
@@ -189,14 +206,16 @@
 }
 
 .badge-purple-v2 {
-    background-color: var(--color-ns-purple-light);
-  }
+  background-color: var(--color-ns-purple-light);
+}
 
 @supports (color: color-mix(in lab, red, red)) {
   .badge-blur-v2:where(.dark, .dark *) {
-    background-color: color-mix(in oklab,
-        var(--color-secondary) 20%,
-        transparent);
+    background-color: color-mix(
+      in oklab,
+      var(--color-secondary) 20%,
+      transparent
+    );
   }
 }
 
@@ -344,5 +363,11 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-color: var(--color-background-2);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
   }
 }

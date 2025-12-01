@@ -3,7 +3,8 @@ import "@/App.css";
 import Navbar from "@/components/ui/navbar";
 import HeroSection from "@/pages/hero-section";
 import EcoSystemSection from "@/pages/eco-system-section";
-import FeaturesSection from "./pages/features-section";
+import FeaturesSection from "@/pages/features-section";
+import HowItsWorkSection from "@/pages/how-its-work-section";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <HeroSection />
       <EcoSystemSection />
       <FeaturesSection />
+      <HowItsWorkSection />
     </BrowserRouter>
   );
 }
