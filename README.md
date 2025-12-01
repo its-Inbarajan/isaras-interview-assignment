@@ -1,13 +1,24 @@
-"""
+<h1 align="center">
 isaras — React + TypeScript + Vite
-"""
+</h1>
 
 **Project**
 
 - **Name:** `isaras` — React + TypeScript app scaffolded with Vite.
-- **Purpose:** Interview task / demo app that uses TailwindCSS, GSAP (ScrollTrigger / ScrollSmoother), and Radix UI for small UI pieces.
+- **Purpose:** Interview task / convert given html,css and js file into complete React application with TypeScript. Modern React patterns, best practices
+and TypeScript interface design and implementation.
 
 **Quick Start**
+
+- **Clone in local**
+
+```bash
+git clone https://github.com/its-Inbarajan/isaras-interview-assignment/
+```
+- **navigate to root**
+```bash
+ cd isaras-interview-assignment
+```
 
 - **Install deps:**
 
@@ -19,8 +30,14 @@ npm install
 
 ```bash
 npm run dev
-```
 
+```
+- **Open localhost url**
+
+```bash
+ Open this url in web : http://localhost:5173/
+
+```
 - **Build:**
 
 ```bash
@@ -51,13 +68,10 @@ npm run build
 
 - **Registration:** `gsap.registerPlugin(ScrollTrigger, ScrollSmoother)` is done in `App.tsx` and should not be re-registered in child components.
 - **scroller:** When using `ScrollSmoother`, pass `scroller: '.smooth-wrapper'` in `ScrollTrigger` configs so triggers attach to the smoother wrapper.
-- **Timing:** Ensure components create timelines after the smoother is initialized and after refs are attached. Code in `how-its-work-section.tsx` guards for defined refs and defers timeline creation to avoid `_gsap` errors.
 
 **Known Issues & Recommendations**
 
-- **App.tsx linting:** earlier edits exposed TypeScript/ESLint complaints when `window` was used with `any`. Prefer using a small context or `useSmoothScroll` hook rather than attaching values on `window`.
-- **Overflow root causes:** remove the global overflow mask and fix absolute/large-width elements (hero, testimonial cards) where needed.
-- **SVG sizing parity:** some icons may need additional `viewBox` tuning to match visual sizes.
+- **App.tsx linting:** earlier edits exposed TypeScript/ESLint complaints when `window` was used with `any`. Prefer using a small context or `useSmoothScroll` hook rather than attaching values on `window`
 
 **Commands**
 
