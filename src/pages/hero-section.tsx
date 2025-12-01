@@ -2,13 +2,14 @@ import React from "react";
 import { dashboard_ai_isaras, gradient_37 } from "@/assets/image";
 import tube_4 from "@/assets/videos/tube-4.mp4";
 import { Button } from "@/components/ui/button";
-
-type Typefeatures = {
-  text: string;
-  svg: React.ReactElement;
-};
+import useHeroAnimation from "@/hooks/useHeroAnimation";
+import type { Typefeatures } from "@/@types/types";
 
 export default function HeroSection() {
+  const heroContentRef = React.useRef<HTMLDivElement | null>(null);
+
+  useHeroAnimation({ heroContentRef });
+
   const features: Typefeatures[] = [
     {
       svg: (
@@ -121,17 +122,15 @@ export default function HeroSection() {
         Your browser does not support the video tag.
       </video>
       <div className="relative sm:pt-[230px] pt-40 pb-[140px] max-sm:pb-16 max-[426px]:pb-10 z-20">
-        <div className="max-w-full text-center relative z-10">
-          <span
-            data-ns-animate
-            data-delay="0.1"
-            className="badge badge-purple-v2  mb-5"
-          >
+        <div
+          ref={heroContentRef}
+          className="max-w-full text-center relative z-10"
+        >
+          <span data-hero="badge" className="badge badge-purple-v2  mb-5">
             Where Aspiration meets Intelligence
           </span>
           <h1
-            data-ns-animate
-            data-delay="0.2"
+            data-hero="heading"
             className="font-semibold mb-4 xl:text-7xl md:text-4xl text-3xl"
           >
             Your{" "}
@@ -145,38 +144,25 @@ export default function HeroSection() {
             </span>
           </h1>
           <p
-            data-ns-animate
-            data-delay="0.3"
+            data-hero="description"
             className="max-w-[588px] font-medium text-gray-500 mx-auto mb-10 md:mb-14"
           >
             Chat, Learn & Practice with india’s largest first-stage AI Mentor
           </p>
           <ul className="flex flex-col md:flex-row gap-4 mb-9 px-2 md:mb-11 text-center lg:mb-14 max-md:w-full md:w-auto mx-auto md:mx-0 justify-center">
-            <li
-              data-ns-animate
-              data-delay="0.3"
-              data-direction="left"
-              data-offset="50"
-            >
+            <li data-hero="button-1">
               <Button className="text-center hover:bg-black hover:text-white md:btn-xl w-10/12 md:w-auto mx-auto md:mx-0">
                 <span>Ask Saras</span>
               </Button>
             </li>
-            <li
-              data-ns-animate
-              data-delay="0.5"
-              data-direction="left"
-              data-offset="50"
-            >
+            <li data-hero="button-2">
               <Button className="bg-white hover:bg-purple-500 hover:has-[svg]:text-white text-center border shadow text-black border-gray-500 w-10/12 md:w-auto mx-auto md:mx-0">
                 <span>Try Free Now</span>
               </Button>
             </li>
           </ul>
           <div
-            data-ns-animate
-            data-delay="0.7"
-            data-instant="true"
+            data-hero="dashboard"
             className="relative max-w-[1290px] mx-auto lp:mx-auto max-lp:mx-5 max-sm:rounded-2xl rounded-4xl overflow-hidden max-sm:p-2 p-2.5 bg-background-3 dark:bg-background-7 max-sm:max-w-[450px] max-sm:mx-auto max-[500px]:mx-5! bg-image"
           >
             <img
@@ -185,7 +171,10 @@ export default function HeroSection() {
               className="w-full h-ful object-cover max-sm:rounded-xl rounded-[25px]"
             />
           </div>
-          <ul className="flex flex-wrap max-lg:gap-5 text-center items-center justify-center gap-[42px] max-lg:mt-4 mt-20">
+          <ul
+            data-hero="features"
+            className="flex flex-wrap max-lg:gap-5 text-center items-center justify-center gap-[42px] max-lg:mt-4 mt-20"
+          >
             {features.map((item) => (
               <li
                 key={`feature-${item.text}`}

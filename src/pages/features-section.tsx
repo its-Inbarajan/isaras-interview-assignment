@@ -1,3 +1,4 @@
+import type { Tfeatures } from "@/@types/types";
 import {
   gradient_23,
   smarter_than_chatgpt,
@@ -8,11 +9,6 @@ import {
 } from "@/assets/image";
 import { cn } from "@/lib/utils";
 
-type Tfeatures = {
-  title: string;
-  des: string;
-  image: string;
-};
 export default function FeaturesSection() {
   const content: Tfeatures[] = [
     {
