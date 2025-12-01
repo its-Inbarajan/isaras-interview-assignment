@@ -1,3 +1,4 @@
+import { gsap } from "gsap";
 import React from "react";
 import {
   gradient_32,
@@ -9,9 +10,11 @@ import {
   step_3,
   step_4,
 } from "@/assets/image";
-import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Gradient from "@/components/ui/gradient-background";
+
+gsap.registerPlugin(ScrollTrigger);
+
 type CardContent = {
   title: string;
   des: string;
@@ -19,10 +22,9 @@ type CardContent = {
   image_1: string;
   image_2: string;
 };
-gsap.registerPlugin(ScrollTrigger);
 
 export default function HowItsWorkSection() {
-  const containerRef = React.useRef<HTMLElement | null>(null);
+  const containerRef = React.useRef<HTMLDivElement | null>(null);
   const cardRefs = React.useRef<HTMLDivElement[]>([]);
 
   const cardContent: CardContent[] = React.useMemo(
@@ -63,10 +65,14 @@ export default function HowItsWorkSection() {
     []
   );
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (typeof window === "undefined") return;
     const el = containerRef.current;
     if (!el) return;
+
+    // Wait until all cardRefs are set (no undefined)
+    const cards = cardRefs.current.filter(Boolean);
+    if (cards.length !== cardRefs.current.length || cards.length === 0) return;
 
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
@@ -76,10 +82,11 @@ export default function HowItsWorkSection() {
           end: "+=3000", // scroll distance
           pin: true,
           scrub: true,
+          once: true,
         },
       });
 
-      cardRefs.current.forEach((card, index) => {
+      cards.forEach((card, index) => {
         tl.fromTo(
           card,
           { y: 200, opacity: 0 },
@@ -95,7 +102,7 @@ export default function HowItsWorkSection() {
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [cardContent.length]);
   return (
     <section
       ref={containerRef}
@@ -109,18 +116,10 @@ export default function HowItsWorkSection() {
           <div className="col-span-12 xl:col-span-6 lg:sticky lg:top-28">
             <div className="space-y-7 xl:text-left text-center">
               <div className="space-y-3">
-                <h2
-                  data-ns-animate
-                  data-delay="0.2"
-                  className="xl:max-w-[629px] text-3xl md:text-7xl w-full xl:mx-0 mx-auto"
-                >
+                <h2 className="xl:max-w-[629px] text-3xl md:text-7xl w-full xl:mx-0 mx-auto">
                   How it Works
                 </h2>
-                <p
-                  data-ns-animate
-                  data-delay="0.3"
-                  className="text-sm leading-relaxed text-gray-500 xl:max-w-[544px]"
-                >
+                <p className="text-sm leading-relaxed text-gray-500 xl:max-w-[544px]">
                   Prepare smarter in four simple steps. <br /> From login to
                   personalized AI mentorship - I, Saras will make UPSC learning
                   seamless, interactive, and efficient.
@@ -131,49 +130,50 @@ export default function HowItsWorkSection() {
           <div className="col-span-12 xl:col-span-6 flex justify-center">
             <div className="xl:max-w-full max-w-[820px] w-full xl:mx-0 mx-auto relative">
               {/* <!-- card one  --> */}
-              {cardContent.map((item, idx) => (
-                <div
-                  key={`hiw-${item.title}`}
-                  ref={(el) => {
-                    if (el) cardRefs.current[idx] = el;
-                  }}
-                  className="p-2 absolute right-0 translate-x-0 translate-y-0 top-[calc(--spacing*28)] rounded-[20px] z-20 flex items-center justify-center sm:max-w-[483px] max-w-full sm:mx-0 mx-auto w-full overflow-hidden"
-                  style={{
-                    transform: "translateY(0)",
-                    willChange: "transform, opacity",
-                  }}
-                >
-                  {/* <!-- border img  --> */}
-                  <figure className="absolute pointer-events-none top-[-62%] md:-top-[85%] left-[-48%] md:-left-[68%] -z-10 rotate-312 opacity-50 md:size-[800px] size-[500px] select-none">
-                    <img
-                      src={item.image_1}
-                      alt="step"
-                      className="block w-full h-full"
-                    />
-                  </figure>
-                  {/* <!-- card content  --> */}
-                  <div className="relative z-10 p-8 rounded-[14px] sm:max-w-[467px] max-w-full w-full space-y-6 bg-white dark:bg-black">
-                    <div className="space-y-1">
-                      <h5 className="mb-2">
-                        <span className="text-(--color-primary-500) text-2xl font-medium">
-                          {item.title}
-                        </span>
-                      </h5>
-                      <p className="text-heading-4 text-gray-500 dark:text-white">
-                        {item.des}
-                      </p>
-                      <p>{item.sub_des}</p>
-                    </div>
-                    <figure className="max-w-[385px] w-full rounded-2xl overflow-hidden">
+              {cardContent &&
+                cardContent.map((item, idx) => (
+                  <div
+                    key={`hiw-${item.title}`}
+                    ref={(el) => {
+                      if (el) cardRefs.current[idx] = el;
+                    }}
+                    className="p-2 absolute right-0 translate-x-0 translate-y-0 top-[calc(--spacing*28)] rounded-[20px] z-20 flex items-center justify-center sm:max-w-[483px] max-w-full sm:mx-0 mx-auto w-full overflow-hidden"
+                    style={{
+                      transform: "translateY(0)",
+                      willChange: "transform, opacity",
+                    }}
+                  >
+                    {/* <!-- border img  --> */}
+                    <figure className="absolute pointer-events-none top-[-62%] md:-top-[85%] left-[-48%] md:-left-[68%] -z-10 rotate-312 opacity-50 md:size-[800px] size-[500px] select-none">
                       <img
-                        src={item.image_2}
+                        src={item.image_1}
                         alt="step"
-                        className="md:max-h-[315px] md:min-h-[315px]"
+                        className="block w-full h-full"
                       />
                     </figure>
+                    {/* <!-- card content  --> */}
+                    <div className="relative z-10 p-8 rounded-[14px] sm:max-w-[467px] max-w-full w-full space-y-6 bg-white dark:bg-black">
+                      <div className="space-y-1">
+                        <h5 className="mb-2">
+                          <span className="text-(--color-primary-500) text-2xl font-medium">
+                            {item.title}
+                          </span>
+                        </h5>
+                        <p className="text-heading-4 text-gray-500 dark:text-white">
+                          {item.des}
+                        </p>
+                        <p>{item.sub_des}</p>
+                      </div>
+                      <figure className="max-w-[385px] w-full rounded-2xl overflow-hidden">
+                        <img
+                          src={item.image_2}
+                          alt="step"
+                          className="md:max-h-[315px] md:min-h-[315px]"
+                        />
+                      </figure>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
         </div>

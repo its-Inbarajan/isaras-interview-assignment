@@ -1,3 +1,4 @@
+import type { ITabs } from "@/@types/types";
 import {
   ask_saras,
   gradient_3,
@@ -18,26 +19,6 @@ import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 import React from "react";
-
-interface IContentList {
-  icon: string;
-  title: string;
-  des: string;
-}
-
-type TContent = {
-  image: string;
-  text: string;
-  highlightText: string;
-  description: string;
-  list: IContentList[];
-};
-
-interface ITabs {
-  label: string;
-  value: string;
-  content: TContent;
-}
 
 export default function EcoSystemSection() {
   const tab: ITabs[] = [

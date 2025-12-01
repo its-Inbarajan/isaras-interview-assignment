@@ -1,16 +1,6 @@
+import type { Price } from "@/@types/types";
 import { gradient_11, gradient_14 } from "@/assets/image";
 import { cn } from "@/lib/utils";
-
-type Price = {
-  planName: string;
-  tagline: string;
-  price: string;
-  billingDetails: string;
-  buttonText: string;
-  disclaimer: string;
-  description: string;
-  features: string[];
-};
 
 export default function PricingSection() {
   const price: Price[] = [

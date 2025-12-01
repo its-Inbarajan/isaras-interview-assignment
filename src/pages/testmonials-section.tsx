@@ -9,12 +9,7 @@ import {
   test_vinoth,
 } from "@/assets/image";
 import gsap from "gsap";
-type Testmonials = {
-  name: string;
-  position: string;
-  image: string;
-  quote: string;
-};
+import type { Testmonials } from "@/@types/types";
 
 export default function Testmonials() {
   const testimonials: Testmonials[] = React.useMemo(

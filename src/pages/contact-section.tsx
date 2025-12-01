@@ -1,10 +1,5 @@
+import type { Contact } from "@/@types/types";
 import { mail, phone } from "@/assets/image";
-
-type Contact = {
-  text: string;
-  icon: string;
-  type: "phone" | "mail";
-};
 
 export default function Contact() {
   const contact: Contact[] = [
