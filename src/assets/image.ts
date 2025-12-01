@@ -2,7 +2,9 @@ import isaras_bm from "./isaras-bm.svg";
 import logo_isaras from "./logo-isaras.png";
 import gradient_11 from "./images/gradient-11.png";
 import gradient_14 from "./images/gradient-14.png";
+import gradient_16 from "./images/gradient-16.png";
 import gradient_37 from "./images/gradient-37.png";
+import gradient_40 from "./images/gradient-40.png";
 import gradient_44 from "./images/gradient-44.png";
 import gradient_23 from "./images/gradient-23.png";
 import gradient_25 from "./images/gradient-25.png";
@@ -28,6 +30,9 @@ import step_3 from "./images/step-3.png";
 import step_4 from "./images/step-4.png";
 import PYQS from "./images/PYQS.png";
 import smarter_than_chatgpt from "./images/smarter-than-chatgpt.png";
+import sisfs_logo from "./images/sisfs-logo.png";
+import IIML_EIC_logo from "./images/IIML-EIC-logo.png";
+import aws_logo from "./images/aws-logo.png";
 import smarter_than_search from "./images/smarter-than-search.png";
 import current_affairs from "./images/current-affairs.png";
 import stress_less from "./images/stress-less.png";
@@ -84,4 +89,9 @@ export {
   gradient_25,
   gradient_14,
   gradient_11,
+  gradient_40,
+  IIML_EIC_logo,
+  aws_logo,
+  gradient_16,
+  sisfs_logo,
 };
