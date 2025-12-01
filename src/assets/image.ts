@@ -1,4 +1,12 @@
 import isaras_bm from "./isaras-bm.svg";
+import mail from "././svg/mail.svg";
+import phone from "././svg/phone.svg";
+import t_2_white from "././svg/t-2-white.svg";
+import facebook from "././svg/facebook.svg";
+import instagram from "././svg/instagram.svg";
+import linkedin from "././svg/linkedin.svg";
+import x from "././svg/twitter-social-media-svgrepo-com.svg";
+import youtube from "././svg/youtube.svg";
 import logo_isaras from "./logo-isaras.png";
 import gradient_11 from "./images/gradient-11.png";
 import gradient_14 from "./images/gradient-14.png";
@@ -8,9 +16,11 @@ import gradient_40 from "./images/gradient-40.png";
 import gradient_44 from "./images/gradient-44.png";
 import gradient_23 from "./images/gradient-23.png";
 import gradient_25 from "./images/gradient-25.png";
+import gradient_31 from "./images/gradient-31.png";
 import gradient_32 from "./images/gradient-32.png";
 import gradient_33 from "./images/gradient-33.png";
 import gradient_34 from "./images/gradient-34.png";
+import gradient_2 from "./images/gradient-2.png";
 import gradient_3 from "./images/gradient-3.png";
 import gradient_9 from "./images/gradient-9.png";
 import ask_saras from "./images/ask-saras.png";
@@ -94,4 +104,14 @@ export {
   aws_logo,
   gradient_16,
   sisfs_logo,
+  mail,
+  phone,
+  facebook,
+  gradient_2,
+  gradient_31,
+  instagram,
+  linkedin,
+  t_2_white,
+  x,
+  youtube,
 };

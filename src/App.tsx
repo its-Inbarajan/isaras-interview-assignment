@@ -1,4 +1,3 @@
-import { BrowserRouter } from "react-router-dom";
 import "@/App.css";
 import Navbar from "@/components/ui/navbar";
 import HeroSection from "@/pages/hero-section";
@@ -9,10 +8,12 @@ import Testmonials from "@/pages/testmonials-section";
 import PricingSection from "@/pages/pricing-section";
 import Faq from "@/pages/faq-section";
 import Partner from "@/pages/partner-and-support";
+import Contact from "@/pages/contact-section";
+import Footer from "@/components/ui/footer";
 
 function App() {
   return (
-    <BrowserRouter>
+    <main>
       <Navbar />
       <HeroSection />
       <EcoSystemSection />
@@ -22,7 +23,9 @@ function App() {
       <PricingSection />
       <Faq />
       <Partner />
-    </BrowserRouter>
+      <Contact />
+      <Footer />
+    </main>
   );
 }
 

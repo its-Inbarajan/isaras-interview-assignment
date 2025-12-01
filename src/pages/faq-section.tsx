@@ -36,7 +36,7 @@ export default function Faq() {
           className="w-full h-auto max-w-full"
         />
       </figure>
-      <div className="max-w-full mx-auto md:max-w-7xl">
+      <div className="max-w-full mx-auto md:max-w-7xl relative z-10">
         <div className="text-center space-y-3 mb-14 md:mb-[70px]">
           <span
             data-ns-animate
