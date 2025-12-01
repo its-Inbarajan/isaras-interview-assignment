@@ -1,8 +1,11 @@
 import isaras_bm from "./isaras-bm.svg";
 import logo_isaras from "./logo-isaras.png";
+import gradient_11 from "./images/gradient-11.png";
+import gradient_14 from "./images/gradient-14.png";
 import gradient_37 from "./images/gradient-37.png";
 import gradient_44 from "./images/gradient-44.png";
 import gradient_23 from "./images/gradient-23.png";
+import gradient_25 from "./images/gradient-25.png";
 import gradient_32 from "./images/gradient-32.png";
 import gradient_33 from "./images/gradient-33.png";
 import gradient_34 from "./images/gradient-34.png";
@@ -30,6 +33,11 @@ import current_affairs from "./images/current-affairs.png";
 import stress_less from "./images/stress-less.png";
 import study_efficient from "./images/study-efficient.png";
 import perform_better from "./images/perform-better.png";
+import test_arjun from "./images/test-arjun.png";
+import test_muthu from "./images/test-muthu.png";
+import test_priya from "./images/test-priya.png";
+import test_saranya from "./images/test-saranya.png";
+import test_vinoth from "./images/test-vinoth.png";
 import dashboard_ai_isaras from "./images/dashboard-ai-isaras.png";
 import tube_4 from "./videos/tube-4.mp4";
 
@@ -68,4 +76,12 @@ export {
   step_2,
   step_3,
   step_4,
+  test_arjun,
+  test_muthu,
+  test_priya,
+  test_saranya,
+  test_vinoth,
+  gradient_25,
+  gradient_14,
+  gradient_11,
 };

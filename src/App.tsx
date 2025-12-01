@@ -5,6 +5,8 @@ import HeroSection from "@/pages/hero-section";
 import EcoSystemSection from "@/pages/eco-system-section";
 import FeaturesSection from "@/pages/features-section";
 import HowItsWorkSection from "@/pages/how-its-work-section";
+import Testmonials from "@/pages/testmonials-section";
+import PricingSection from "@/pages/pricing-section";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <EcoSystemSection />
       <FeaturesSection />
       <HowItsWorkSection />
+      <Testmonials />
+      <PricingSection />
     </BrowserRouter>
   );
 }
