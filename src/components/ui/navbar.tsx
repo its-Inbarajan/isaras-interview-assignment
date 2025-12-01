@@ -42,7 +42,7 @@ export default function Navbar() {
               </a>
             </div>
             <nav className="hidden xl:flex items-center absolute left-1/2 -translate-x-1/2">
-              <ul className="flex items-center">
+              <ul className="inline-flex items-center">
                 {[
                   "home",
                   "features",
@@ -95,6 +95,8 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
+      {/* Mobile view */}
       {show && (
         <aside
           className={

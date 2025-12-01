@@ -406,6 +406,11 @@
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
+  /* Prevent horizontal overflow caused by large absolute elements */
+  html,
+  body {
+    overflow-x: hidden;
+  }
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
@@ -458,3 +463,21 @@
     cursor: pointer;
   }
 }
+
+/* .footer-social-link {
+  transition-property: transform, translate, scale, rotate;
+  transition-timing-function: var(
+    --tw-ease,
+    var(--default-transition-timing-function)
+  );
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  --tw-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+@media (hover: hover) {
+  .footer-social-link:hover {
+    --tw-translate-y: calc(var(--spacing) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+} */

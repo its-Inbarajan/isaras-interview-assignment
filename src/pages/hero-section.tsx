@@ -100,7 +100,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative bg-white dark:bg-(--color-background-8) z-0 sm:pb-0 pb-14 lg:-mb-12 md:-mb-10 overflow-hidden"
+      className="relative bg-white dark:bg-(--color-background-6) z-0 sm:pb-0 pb-14 lg:-mb-12 md:-mb-10 overflow-hidden"
     >
       <figure className="absolute animate-spin animation-duration-[60s] z-3 size-[80vw] sm:size-[60vw] lg:size-[50vw] rotate-[-597deg] top-[250px] left-1/2 -translate-x-1/2 select-none pointer-events-none">
         <img
