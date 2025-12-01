@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  gradient_23,
   gradient_32,
   gradient_33,
   gradient_34,
@@ -12,6 +11,7 @@ import {
 } from "@/assets/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Gradient from "@/components/ui/gradient-background";
 type CardContent = {
   title: string;
   des: string;
@@ -64,6 +64,10 @@ export default function HowItsWorkSection() {
   );
 
   React.useEffect(() => {
+    if (typeof window === "undefined") return;
+    const el = containerRef.current;
+    if (!el) return;
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -99,20 +103,7 @@ export default function HowItsWorkSection() {
       className="py-[50px] md:py-20 lg:py-[100px] w-full"
       aria-label="how it work section"
     >
-      <figure
-        data-ns-animate
-        data-delay="0.2"
-        data-direction="up"
-        data-offset="100"
-        className="absolute top-0 left-0 right-0 bottom-0 z-0rotate-180 h-full -z-10 select-none pointer-events-none -translate-y-1/2 sm:-translate-y-2/5 md:-translate-y-1/2 lg:-translate-y-[80%]"
-        //   className="absolute top-1/2 sm:top-2/5 md:top-1/4 lg:top-0 left-1/2 -translate-x-1/2 w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[1140px] -translate-y-1/2 sm:-translate-y-2/5 md:-translate-y-1/2 lg:-translate-y-[80%] rotate-180 h-full -z-10 select-none pointer-events-none"
-      >
-        <img
-          src={gradient_23}
-          alt="How it Works background gradient"
-          className="w-full h-auto max-w-none opacity-[0.5]"
-        />
-      </figure>
+      <Gradient />
       <div className="max-w-full w-full mx-auto px-4 ">
         <div className="grid grid-cols-12 xl:gap-[60px] gap-y-12 items-start">
           <div className="col-span-12 xl:col-span-6 lg:sticky lg:top-28">
@@ -137,8 +128,8 @@ export default function HowItsWorkSection() {
               </div>
             </div>
           </div>
-          <div className="col-span-12 xl:col-span-6 flex justify-center h-full">
-            <div className="xl:max-w-full max-w-[820px] w-full xl:mx-0 mx-auto">
+          <div className="col-span-12 xl:col-span-6 flex justify-center">
+            <div className="xl:max-w-full max-w-[820px] w-full xl:mx-0 mx-auto relative">
               {/* <!-- card one  --> */}
               {cardContent.map((item, idx) => (
                 <div
@@ -146,7 +137,7 @@ export default function HowItsWorkSection() {
                   ref={(el) => {
                     if (el) cardRefs.current[idx] = el;
                   }}
-                  className="p-2 absolute translate-x-0 translate-y-0 top-[calc(--spacing*28)] rounded-[20px] z-40 flex items-center justify-center sm:max-w-[483px] max-w-full sm:mx-0 mx-auto w-full overflow-hidden"
+                  className="p-2 absolute right-0 translate-x-0 translate-y-0 top-[calc(--spacing*28)] rounded-[20px] z-20 flex items-center justify-center sm:max-w-[483px] max-w-full sm:mx-0 mx-auto w-full overflow-hidden"
                   style={{
                     transform: "translateY(0)",
                     willChange: "transform, opacity",

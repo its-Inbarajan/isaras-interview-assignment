@@ -97,7 +97,7 @@ export default function FeaturesSection() {
             >
               <div className="space-y-1">
                 <h5 className="font-semibold text-xl ">{item.title}</h5>
-                <p className="text-gray-500 leading-normal md:leading-6 tracking-wide text-sm max-w-xs md:w-2xs xl:w-sm">
+                <p className="text-gray-500 leading-normal md:leading-6 tracking-wide text-sm md:w-2xs xl:w-sm">
                   {item.des}
                 </p>
               </div>

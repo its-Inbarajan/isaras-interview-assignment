@@ -223,6 +223,53 @@
   color: #fcfcfc99;
 }
 
+.badge-cyan {
+  background-color: var(--color-ns-cyan-light);
+}
+
+.badge-cyan:where(.dark, .dark *) {
+  background-color: #fcfcfc1a;
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+  .badge-cyan:where(.dark, .dark *) {
+    background-color: color-mix(in oklab, var(--color-accent) 10%, transparent);
+  }
+}
+
+.badge-cyan:where(.dark, .dark *) {
+  color: var(--color-ns-green);
+}
+
+.badge-cyan-v2 {
+  background-color: var(--color-ns-cyan-light);
+}
+
+.badge-cyan-v2:where(.dark, .dark *) {
+  background-color: #fcfcfc1a;
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+  .badge-cyan-v2:where(.dark, .dark *) {
+    background-color: color-mix(in oklab, var(--color-accent) 10%, transparent);
+  }
+}
+
+.badge-cyan-v2:where(.dark, .dark *) {
+  color: var(--color-ns-cyan);
+}
+
+.badge-blur {
+  color: var(--color-primary-50);
+  background-color: #fcfcfc1a;
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+  .badge-blur {
+    background-color: color-mix(in oklab, var(--color-accent) 10%, transparent);
+  }
+}
+
 @supports (color: color-mix(in lab, red, red)) {
   .badge-blur-v2:where(.dark, .dark *) {
     color: color-mix(in oklab, var(--color-accent) 60%, transparent);
