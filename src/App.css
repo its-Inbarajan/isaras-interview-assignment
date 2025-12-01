@@ -264,6 +264,46 @@
   background-color: #fcfcfc1a;
 }
 
+.badge-green {
+  background-color: var(--color-ns-green-light);
+}
+
+.badge-green:where(.dark, .dark *) {
+  background-color: #fcfcfc1a;
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+  .badge-green:where(.dark, .dark *) {
+    background-color: color-mix(in oklab, var(--color-accent) 10%, transparent);
+  }
+}
+
+.badge-green:where(.dark, .dark *) {
+  color: var(--color-ns-yellow);
+}
+
+.badge-green-v2 {
+  background-color: var(--color-ns-green-light);
+}
+
+.badge-purple-v2 {
+  background-color: var(--color-ns-purple-light);
+}
+
+.badge-green-v2:where(.dark, .dark *) {
+  background-color: #fcfcfc1a;
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+  .badge-green-v2:where(.dark, .dark *) {
+    background-color: color-mix(in oklab, var(--color-accent) 10%, transparent);
+  }
+}
+
+.badge-green-v2:where(.dark, .dark *) {
+  color: var(--color-ns-green);
+}
+
 @supports (color: color-mix(in lab, red, red)) {
   .badge-blur {
     background-color: color-mix(in oklab, var(--color-accent) 10%, transparent);

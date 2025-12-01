@@ -155,12 +155,17 @@ export default function PricingSection() {
                       {item.billingDetails}
                     </p>
                   </div>
-                  <a
-                    href="#"
-                    className="btn btn-md btn-white w-full block dark:btn-white-dark hover:btn-secondary dark:hover:btn-white mb-2 before:content-none first-letter:uppercase"
+                  <button
+                    type="button"
+                    className={cn(
+                      "block w-full rounded-full first-letter:uppercase text-white mb-2 py-2 px-4 bg-purple-500 transition-all duration-500 ease-in-out",
+                      index === 1
+                        ? "bg-purple-500 hover:bg-transparent hover:border-px hover:shadow hover:text-black"
+                        : "bg-transparent text-black shadow hover:bg-purple-500 hover:text-white border-px"
+                    )}
                   >
                     {item.buttonText}
-                  </a>
+                  </button>
                   <p className="mb-8 italic text-sm">{item.disclaimer}</p>
                   <h4 className="mb-5 mt-2 text-2xl font-normal text-(--text-heading-5)">
                     {item.description}
